@@ -1,1 +1,4 @@
 topotoolbox>=0.0.7
+sphinx
+sphinx-book-theme
+nbsphinx
