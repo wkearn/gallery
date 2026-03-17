@@ -28,6 +28,8 @@ jobs:
           OPENTOPOGRAPHY_API_KEY: ${{ secrets.OPENTOPOGRAPHY_API_KEY }}
         run: |
           printf '%s' "$OPENTOPOGRAPHY_API_KEY" > $HOME/.opentopography.txt
+          mkdir -p $HOME/.matlab/R2025b
+          cp $HOME/.opentopography.txt $HOME/.matlab/R2025b/opentopography.apikey
       - name: Setup MATLAB
         uses: matlab-actions/setup-matlab@v2
         with:
@@ -36,12 +38,6 @@ jobs:
           products: |
             Mapping_Toolbox
             Image_Processing_Toolbox
-      - name: Ensure API key is available for MATLAB examples that require it
-        env:
-          OPENTOPOGRAPHY_API_KEY: ${{ secrets.OPENTOPOGRAPHY_API_KEY }}
-        run: |
-          mkdir -p $HOME/.matlab/R2025b
-          printf '%s' "$OPENTOPOGRAPHY_API_KEY" > $HOME/.matlab/R2025b/opentopography.apikey
       - name: Run MATLAB build
         uses: matlab-actions/run-build@v2
       - name: Build sphinx documentation
