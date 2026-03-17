@@ -40,6 +40,7 @@ jobs:
         env:
           OPENTOPOGRAPHY_API_KEY: ${{ secrets.OPENTOPOGRAPHY_API_KEY }}
         run: |
+          mkdir -p $HOME/.matlab/R2025b
           printf '%s' "$OPENTOPOGRAPHY_API_KEY" > $HOME/.matlab/R2025b/opentopography.apikey
       - name: Run MATLAB build
         uses: matlab-actions/run-build@v2
