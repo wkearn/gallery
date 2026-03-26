@@ -2,7 +2,7 @@ name: Build gallery
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main", "pr-24"]
 
 jobs:
   build:
