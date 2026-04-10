@@ -3,6 +3,7 @@ name: Build gallery
 on:
   push:
     branches: ["main"]
+  workflow-dispatch:
 
 jobs:
   build:
