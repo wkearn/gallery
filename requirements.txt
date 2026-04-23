@@ -4,3 +4,4 @@ sphinx-book-theme
 nbsphinx
 notebook
 cmocean
+landlab
